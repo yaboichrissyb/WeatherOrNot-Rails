@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  icon: MyString
+  precipIntensity: 1.5
+  precipProbability: 1.5
+  precipType: MyString
+  temperature: 1
+  temperatureMin: 1
+  temperatureMax: 1
+  humidity: 1.5
+
+two:
+  icon: MyString
+  precipIntensity: 1.5
+  precipProbability: 1.5
+  precipType: MyString
+  temperature: 1
+  temperatureMin: 1
+  temperatureMax: 1
+  humidity: 1.5
