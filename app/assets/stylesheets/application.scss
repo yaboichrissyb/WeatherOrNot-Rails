@@ -13,32 +13,4 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-/*DAY
-icon: string
-precipIntensity: float
-precipProbability:float
-precipType:string
-temperature:integer
-temperatureMin:integer
-temperatureMax:integer
-humidity: float*/
-
-/*propTypes: {
-     day: React.PropTypes.string,
-     imageURL: React.PropTypes.string,
-     temperature: React.PropTypes.number,
-     latitude: React.PropTypes.number,
-     longitude: React.PropTypes.number
-   },
-
-getInitialState () {
-     return {
-     day: '',
-     temperature: '',
-     imageURL: '',
-     latitude: 0,
-     longitude: 0,
-     source: "https://api.forecast.io/forecast/d079d6aee980626637528da9a94b8bdb/"
-     }
-   },*/
-
+@import "weather-icons";

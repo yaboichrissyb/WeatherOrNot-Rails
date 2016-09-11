@@ -26,6 +26,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem  'normalize-scss'
 gem 'support-for', '~> 1.0'
+gem 'figaro'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'weather-icons-for-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

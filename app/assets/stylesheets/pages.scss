@@ -1,0 +1,239 @@
+#app {
+    height: 100%;
+    width: 100%;
+}
+body {
+padding:20px;
+    background-image: url('http://i.giphy.com/3o6EhOYMhOTANYgHMk.gif');
+    background-size: cover;
+}
+@keyframes colorchange {
+    0% {
+        color: #0038A8;
+    }
+    25% {
+        color: turquoise;
+    }
+    50% {
+        color: #0014A8;
+    }
+    75% {
+        color: #1E90FF;
+    }
+    100% {
+        color: navy;
+    }
+}
+@-webkit-keyframes colorchange
+/* Safari and Chrome - necessary duplicate */
+
+{
+    0% {
+        color: #0038A8;
+    }
+    25% {
+        color: turquoise;
+    }
+    50% {
+        color: #0014A8;
+    }
+    75% {
+        color: #1E90FF;
+    }
+    100% {
+        color: navy;
+    }
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+.app-name {
+    color: white
+}
+.icon {
+    margin-right: 10px;
+    margin-top: 25%;
+    font-size: 4em;
+}
+.week-detail {
+    position: relative;
+    height: 350px;
+    border-radius: 10px;
+    /*padding-left: 5%;*/
+
+    padding-top: 3%;
+    background-color: white;
+}
+.day-tile {
+    display: inline-block;
+    height: 90%;
+    width: 12%;
+    margin-left: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    background-color: white;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.tile-header {
+    height: 10%;
+    padding-top: 1.5%;
+    border-bottom: 2px solid black;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    font-size: 1.2em;
+    color: white;
+    background-color: black;
+}
+.day-tile-image {
+    height: 45%;
+    border-bottom: 2px solid black;
+}
+canvas {
+    display: block;
+    float: left;
+}
+.day-tile-details {
+    height: 45%;
+    padding: 2px;
+    background-color: black;
+}
+h5,
+h6 {
+    color: white;
+}
+.day-detail {
+    height: 350px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.day-detail-image {
+    opacity: 1;
+    display: inline-block;
+    border-top: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 95%;
+    width: 30%;
+    margin-right: 0px;
+    overflow: auto;
+}
+.hour-tile p:first-of-type {
+    text-decoration: underline;
+}
+.big-icon {
+    z-index: 0;
+    font-size: 10em;
+    margin-top: 40px;
+    margin-left: 10px;
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+}
+.time {
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+    margin-left: 10%;
+}
+.day-tile-image i {
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+}
+.day-detail-details {
+    display: inline-block;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 95%;
+    width: 67%;
+    margin-left: 0;
+    overflow: hidden;
+    position: relative;
+}
+.day-detail-header {
+    margin-bottom: -5px;
+    position: relative;
+    top: -10px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    font-size: 1.2em;
+}
+.hour-tile {
+    position: relative;
+    display: inline-block;
+    height: 80px;
+    width: 8.33%;
+    float: left;
+    margin-bottom: 0;
+    border-right: 1px solid black;
+    border-right: 1px solid black;
+    overflow: hidden;
+    color: white;
+    background-color: black;
+}
+.hour-tile:last-of-type {
+    border-right: none;
+}
+.hour-container {
+    width: 100%;
+    height: 81px;
+    position: absolute;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    bottom: 0;
+}
+.hour-tile i {
+    position: absolute;
+    font-size: 2em;
+    z-index: 0;
+    top: 15%;
+    right: 5%;
+    margin-bottom: 10%;
+}
+.day-icon {
+    font-size: 2em;
+    margin-right: 5px;
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+}
+.hour-tile p {
+    z-index: 1;
+}
+.tile-temp {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+}
+.day-data-container {
+    margin-top: 5px;
+    position: relative;
+}
+.day-data {
+    margin-top: 10px;
+    font-weight: 900;
+}
+.small-icon {
+    font-size: 1.2em;
+}
+.alert-container {
+    position: relative;
+    margin-top: 3.2%;
+    border-top: 2px solid black;
+    height: 80px;
+}
+.warning-null {
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.summary {
+    font-weight: 900;
+    font-size: 2em;
+    margin-top: 20px;
+}
