@@ -102,6 +102,7 @@ var DayDetail = React.createClass({
   },
 
   componentDidMount: function() {
+    this.moveAlert();
      window.setInterval(function () {
       this.formatTime();
       this.setTemp();
@@ -115,6 +116,22 @@ var DayDetail = React.createClass({
   },
 
   componentWillMount: function() {
+  },
+
+  moveAlert: function (){
+    var alert = document.getElementById('alert');
+    num = alert.style.right.slice(0, -1);
+    alert.style.right = parseInt(num) + 1 + "%";
+    this.resetMove();
+    setTimeout(this.moveAlert, 50);
+  },
+
+  resetMove: function(){
+    var alert = document.getElementById('alert');
+    if (alert.style.right === "80%"){
+      alert.style.right = "-17%";
+    }
+
   },
 
   formatClassName: function(icon) {
@@ -161,9 +178,9 @@ var DayDetail = React.createClass({
       var uri = alert.uri;
       return (
         <div className="warning">
-          <p>{title}</p>
-          <p>{description}</p>
-          <p>This alert expires at {expires}<a href={uri}>Info</a></p>
+          <span style={{color:red}}>{title}</span>
+          <span>{description}</span>
+          <span style={{color:blue}}>This alert expires at {expires}<a href={uri}>Info</a></span>
         </div>
       )
     } else {
@@ -216,7 +233,7 @@ var DayDetail = React.createClass({
                 </div>
               </div>
               <div className="row alert-container">
-                {this.alertFormatter(this.alerts)}
+                <span id="alert">{this.alertFormatter(this.alerts)}</span>
               </div>
               <div className="hour-container">
                 {hourNums.map(function(hour, index){

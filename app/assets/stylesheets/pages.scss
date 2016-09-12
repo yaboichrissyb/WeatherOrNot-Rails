@@ -4,44 +4,74 @@
 }
 body {
 padding:20px;
-    background-image: url('http://i.giphy.com/3o6EhOYMhOTANYgHMk.gif');
+    background-image: url('http://i.giphy.com/poXx4aQzjwoV2.gif');
     background-size: cover;
 }
+
 @keyframes colorchange {
     0% {
-        color: #0038A8;
+        color: #1940FF
+;
+    }
+    12.5% {
+        color: #3356FF
+;
     }
     25% {
-        color: turquoise;
+        color: #4C6BFF
+;
     }
     50% {
-        color: #0014A8;
+        color: #6680FF;
+    }
+    62.5% {
+        color: #7F95FF;
     }
     75% {
-        color: #1E90FF;
+        color: #6680FF
+;
+    }
+    87.5% {
+        color: #4C6BFF
+;
     }
     100% {
-        color: navy;
+        color: #3356FF
+;
     }
 }
-@-webkit-keyframes colorchange
-/* Safari and Chrome - necessary duplicate */
 
+@-webkit-keyframes colorchange
 {
     0% {
-        color: #0038A8;
+        color: #1940FF
+;
+    }
+    12.5% {
+        color: #3356FF
+;
     }
     25% {
-        color: turquoise;
+        color: #4C6BFF
+;
     }
     50% {
-        color: #0014A8;
+        color: #6680FF;
+    }
+    62.5% {
+        color: #7F95FF;
     }
     75% {
-        color: #1E90FF;
+        color: #6680FF
+;
+    }
+    87.5% {
+        color: #4C6BFF
+;
     }
     100% {
-        color: navy;
+        color: #3356FF
+;
     }
 }
 html,
@@ -121,7 +151,7 @@ h6 {
     height: 95%;
     width: 30%;
     margin-right: 0px;
-    overflow: auto;
+    overflow: hidden;
 }
 .hour-tile p:first-of-type {
     text-decoration: underline;
@@ -131,17 +161,17 @@ h6 {
     font-size: 10em;
     margin-top: 40px;
     margin-left: 10px;
-    animation: colorchange 50s infinite;
-    -webkit-animation: colorchange 50s infinite;
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
 }
 .time {
-    animation: colorchange 50s infinite;
-    -webkit-animation: colorchange 50s infinite;
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
     margin-left: 10%;
 }
 .day-tile-image i {
-    animation: colorchange 50s infinite;
-    -webkit-animation: colorchange 50s infinite;
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
 }
 .day-detail-details {
     display: inline-block;
@@ -199,8 +229,8 @@ h6 {
 .day-icon {
     font-size: 2em;
     margin-right: 5px;
-    animation: colorchange 50s infinite;
-    -webkit-animation: colorchange 50s infinite;
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
 }
 .hour-tile p {
     z-index: 1;
@@ -211,7 +241,7 @@ h6 {
     left: 40%;
 }
 .day-data-container {
-    margin-top: 5px;
+    margin-top:5px;
     position: relative;
 }
 .day-data {
@@ -226,11 +256,18 @@ h6 {
     margin-top: 3.2%;
     border-top: 2px solid black;
     height: 80px;
+    overflow: hidden;
+    z-index:0;
+    margin-left: -30%;
+    padding-top:5%;
 }
 .warning-null {
-    margin-top: 3%;
     font-size: 1.2em;
     font-weight: 900;
+}
+#alert{
+  z-index: 1;
+  position:absolute;
 }
 .summary {
     font-weight: 900;
