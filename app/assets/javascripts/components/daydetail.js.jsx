@@ -37,7 +37,7 @@ var DayDetail = React.createClass({
     var day = weekArray[today.getDay()];
     var date = today.getDate();
     var year = 1900 + today.getYear();
-    return day + ", " + month + " " + date + ", " + year;
+    return day + ", " + month + ". " + date
   },
 
   roundNum: function(num) {
@@ -103,7 +103,7 @@ var DayDetail = React.createClass({
 
   componentDidMount: function() {
     this.moveAlert();
-     window.setInterval(function () {
+    window.setInterval(function () {
       this.formatTime();
       this.setTemp();
       this.setHumidity();
@@ -128,8 +128,8 @@ var DayDetail = React.createClass({
 
   resetMove: function(){
     var alert = document.getElementById('alert');
-    if (alert.style.right === "80%"){
-      alert.style.right = "-17%";
+    if (alert.style.right === "90%"){
+      alert.style.right = "-85%";
     }
 
   },
@@ -137,34 +137,34 @@ var DayDetail = React.createClass({
   formatClassName: function(icon) {
     switch (icon) {
       case "clear-day":
-        icon = "wi wi-day-sunny icon"
-        break;
+      icon = "wi wi-day-sunny icon"
+      break;
       case "clear-night":
-        icon = "wi wi-night-clear icon"
-        break;
+      icon = "wi wi-night-clear icon"
+      break;
       case "rain":
-        icon = "wi wi-rain icon"
-        break;
+      icon = "wi wi-rain icon"
+      break;
       case "snow":
-        icon = "wi wi-snow icon"
-        break;
+      icon = "wi wi-snow icon"
+      break;
       case "sleet":
-        icon = "wi wi-sleet icon"
-        break;
+      icon = "wi wi-sleet icon"
+      break;
       case "wind":
-        icon = "wi wi-strong-wind icon"
-        break;
+      icon = "wi wi-strong-wind icon"
+      break;
       case "fog":
-        icon = "wi wi-fog icon"
-        break;
+      icon = "wi wi-fog icon"
+      break;
       case "cloudy":
-        icon = "wi wi-cloudy icon"
-        break;
+      icon = "wi wi-cloudy icon"
+      break;
       case "partly-cloudy-day":
-        icon = "wi wi-day-cloudy icon";
-        break;
+      icon = "wi wi-day-cloudy icon";
+      break;
       case "partly-cloudy-night":
-        icon = "wi wi-night-cloudy icon";
+      icon = "wi wi-night-cloudy icon";
 
     }
     return icon;
@@ -178,74 +178,73 @@ var DayDetail = React.createClass({
       var uri = alert.uri;
       return (
         <div className="warning">
-          <span style={{color:red}}>{title}</span>
-          <span>{description}</span>
-          <span style={{color:blue}}>This alert expires at {expires}<a href={uri}>Info</a></span>
+        <span style={{color:red}}>{title}</span>
+        <span>{description}</span>
+        <span style={{color:blue}}>This alert expires at {expires}<a href={uri}>Info</a></span>
         </div>
-      )
+        )
     } else {
       return (
         <div className="warning-null">
-          <p>No alerts at this time</p>
+        <p>No alerts at this time</p>
         </div>
-      )
+        )
     }
   },
 
   render () {
     var fullArray = this.props.hours;
-    var twelveArray = fullArray.slice(1,13);
+    var twelveArray = fullArray.slice(1,24);
     var hourNums = Array.from(twelveArray);
+    console.log(hourNums);
     return (
       <div className="row">
-        <center>
-          <div className="day-detail well">
+        <div className="day-detail-container ">
 
-            <div className="row">
+          <center>
+            <div className="day-detail-header col-lg-12 col-md-12 col-sm-12">
+            <span>{this.formatDate(this.props.current.time)}</span><span className="time">{this.state.hour}:{this.state.minutes}:{this.state.seconds}{this.state.part}</span>
+            </div>
+          </center>
+
+          <div className="day-detail-image col-lg-3 col-md-4 col-sm-3">
+            <div className="summary">
+              Today is {this.props.current.summary}
+            </div>
+            <i className={this.formatClassName(this.props.current.icon) + " big-icon"}></i>
+          </div>
+
+          <div className="day-detail-details ">
+
+            <div className="day-data-container col-lg-9 col-md-8 col-sm-9">
               <center>
-                <div className="day-detail-header">
-                <span>{this.formatDate(this.props.current.time)}</span><span className="time">{this.state.hour}:{this.state.minutes}:{this.state.seconds}{this.state.part}</span>
-                </div>
+                <span className="day-data col-lg-4 col-md-4 col-sm-6"><i className="wi wi-thermometer day-icon"></i> Feels like: {this.state.temperature}<i className="wi wi-fahrenheit small-icon"></i></span>
+                <span className="day-data col-lg-4 col-md-4 col-sm-6"><i className="wi wi-humidity day-icon"></i>Humidity: {this.state.humidity}</span>
+                <span className="day-data col-lg-4 col-md-4 col-sm-6"><i className="wi wi-cloud day-icon"></i>Cloud Cover: {this.decConverter(this.props.current.cloudCover)}</span>
+                <span className="day-data col-lg-4 col-md-4 col-sm-6"><i className="wi wi-storm-warning day-icon"></i> Nearest Storm: {this.props.current.nearestStormDistance} miles</span>
+                <span className="day-data col-lg-4 col-md-4 col-sm-6"><i className="wi wi-day-haze day-icon"></i>Visibility: {this.state.visibility} miles</span>
+                <span className="day-data col-lg-4 col-md-4 col-sm-6"><i className="wi wi-windy day-icon"></i>Wind Speed: {this.props.current.windSpeed} mph</span>
               </center>
             </div>
 
-            <div className="day-detail-image">
-              <div className="summary">Today is {this.props.current.summary}</div>
-              <i className={this.formatClassName(this.props.current.icon) + " big-icon"}></i>
+            <div className="hour-container col-lg-9 col-md-8 col-sm-12">
+              {hourNums.map(function(hour, index){
+                return <HourTile data={ hour } key={ index } />;
+              })}
             </div>
 
-
-            <div className="day-detail-details">
-
-              <div className="row">
-                <div className="day-data-container">
-                  <span className="day-data col-sm-12 col-lg-4"><i className="wi wi-thermometer day-icon"></i> Feels like: {this.state.temperature}<i className="wi wi-fahrenheit small-icon"></i></span>
-                  <span className="day-data circle col-sm-12 col-lg-4"><i className="wi wi-humidity day-icon"></i>Humidity: {this.state.humidity}</span>
-                  <span className="day-data circle col-sm-12 col-lg-4"><i className="wi wi-cloud day-icon"></i>Cloud Cover: {this.decConverter(this.props.current.cloudCover)}</span>
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="day-data-container">
-                  <span className="day-data col-sm-12 col-lg-4"><i className="wi wi-storm-warning day-icon"></i> Nearest Storm: {this.props.current.nearestStormDistance} miles</span>
-                  <span className="day-data col-sm-12 col-lg-4"><i className="wi wi-day-haze day-icon"></i>Visibility: {this.state.visibility} miles</span>
-                  <span className="day-data col-sm-12 col-lg-4"><i className="wi wi-windy day-icon"></i>Wind Speed: {this.props.current.windSpeed} mph</span>
-                </div>
-              </div>
-              <div className="row alert-container">
-                <span id="alert">{this.alertFormatter(this.alerts)}</span>
-              </div>
-              <div className="hour-container">
-                {hourNums.map(function(hour, index){
-                  return <HourTile data={ hour } key={ index } />;
-                })}
-              </div>
-            </div>
+             <div className="alert-container col-lg-12 col-md-12 col-sm-12">
+            <span id="alert">{this.alertFormatter(this.alerts)}</span>
+          </div>
 
           </div>
-        </center>
+
+
+
+
+        </div>
       </div>
-    )
+      )
 
   }
 });

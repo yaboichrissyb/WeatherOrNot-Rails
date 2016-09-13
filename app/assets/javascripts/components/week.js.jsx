@@ -20,15 +20,15 @@ var Week = React.createClass({
     var dayArray = this.props.Days;
     var weekArray = dayArray.slice(1,8);
     return (
+
       <div className="row">
-        <center>
-          <div className="week-detail">
+          <div className="week-detail ">
             {weekArray.map(function(day, index){
               return <Day dayData={ day } index={ index } key={ index }/>;
             })}
           </div>
-        </center>
       </div>
+
      )
   }
 });

@@ -31,34 +31,34 @@ var HourTile = React.createClass({
   formatClassName: function(icon) {
     switch (icon) {
       case "clear-day":
-        icon = "wi wi-day-sunny icon"
+        icon = "wi wi-day-sunny"
         break;
       case "clear-night":
-        icon = "wi wi-night-clear icon"
+        icon = "wi wi-night-clear"
         break;
       case "rain":
-        icon = "wi wi-rain icon"
+        icon = "wi wi-rain"
         break;
       case "snow":
-        icon = "wi wi-snow icon"
+        icon = "wi wi-snow"
         break;
       case "sleet":
-        icon = "wi wi-sleet icon"
+        icon = "wi wi-sleet"
         break;
       case "wind":
-        icon = "wi wi-strong-wind icon"
+        icon = "wi wi-strong-wind"
         break;
       case "fog":
-        icon = "wi wi-fog icon"
+        icon = "wi wi-fog"
         break;
       case "cloudy":
-        icon = "wi wi-cloudy icon"
+        icon = "wi wi-cloudy"
         break;
       case "partly-cloudy-day":
-        icon = "wi wi-day-cloudy icon";
+        icon = "wi wi-day-cloudy";
         break;
       case "partly-cloudy-night":
-        icon = "wi wi-night-cloudy icon";
+        icon = "wi wi-night-cloudy";
     }
     return icon;
   },
@@ -66,9 +66,11 @@ var HourTile = React.createClass({
   render () {
     return (
       <div className="hour-tile">
-        <p>{this.formatTime(this.props.data.time)}</p>
-        <i className={this.formatClassName(this.props.data.icon)}></i>
-        <p className="tile-temp">{Math.round(this.props.data.apparentTemperature)}</p>
+        <center>
+          <p>{this.formatTime(this.props.data.time)}</p>
+          <i className={this.formatClassName(this.props.data.icon)}></i>
+          <p className="tile-temp">{Math.round(this.props.data.apparentTemperature)}</p>
+        </center>
       </div>
     )
   }

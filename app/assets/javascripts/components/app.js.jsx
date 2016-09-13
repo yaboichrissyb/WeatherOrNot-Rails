@@ -50,7 +50,7 @@ var App = React.createClass({
   },
 
   componentDidMount: function(){
-    document.getElementById('alert').style.right="-17%";
+    document.getElementById('alert').style.right="-85%";
     this.getLocation();
     var Url = this.props.baseUrl + this.props.key + '/' + this.state.latitude + ',' + this.state.longitude
     this.serverRequest = $.get(Url, function (result) {
@@ -58,7 +58,6 @@ var App = React.createClass({
       var dayArray = result.daily.data;
       var hourly = result.hourly.data;
       var alerts = result.alert;
-      console.log(result.currently);
       this.setState({
         current: currently,
         Days: dayArray,
@@ -71,15 +70,17 @@ var App = React.createClass({
   render () {
 
     return (
-      <div classID="app">
-        <div className="container">
 
+      <div className="container">
+        <div classID="app">
           <Header />
 
           <DayDetail  alerts={ this.state.alerts } hours={this.state.hours} current={this.state.current} Url={this.props.baseUrl + this.props.key + '/' + this.props.latitude + ',' + this.props.longitude}/>
-          <Week  Days={this.state.Days} Url={this.props.baseUrl + this.props.key + '/' + this.props.latitude + ',' + this.props.longitude}/>
+          <Week   Days={this.state.Days} Url={this.props.baseUrl + this.props.key + '/' + this.props.latitude + ',' + this.props.longitude}/>
+
         </div>
       </div>
+
       )
   }
 });

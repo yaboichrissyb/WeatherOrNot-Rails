@@ -3,7 +3,6 @@
     width: 100%;
 }
 body {
-padding:20px;
     background-image: url('http://i.giphy.com/poXx4aQzjwoV2.gif');
     background-size: cover;
 }
@@ -88,24 +87,29 @@ body {
     font-size: 4em;
 }
 .week-detail {
-    position: relative;
     height: 350px;
-    border-radius: 10px;
-    /*padding-left: 5%;*/
-
+    width:100%;
+    max-width:1200px;
+    border-radius: 0 0 10px 10px;
     padding-top: 3%;
     background-color: white;
+    overflow-x:scroll;
+    white-space:nowrap;
+    margin-bottom:10px;
+    margin-top:10px;
 }
+
+
 .day-tile {
     display: inline-block;
     height: 90%;
-    width: 12%;
+    width: 142px;
     margin-left: 10px;
     border-radius: 5px;
-    overflow: auto;
     background-color: white;
     border-left: 2px solid black;
     border-right: 2px solid black;
+
 }
 .tile-header {
     height: 10%;
@@ -121,10 +125,7 @@ body {
     height: 45%;
     border-bottom: 2px solid black;
 }
-canvas {
-    display: block;
-    float: left;
-}
+
 .day-tile-details {
     height: 45%;
     padding: 2px;
@@ -134,28 +135,21 @@ h5,
 h6 {
     color: white;
 }
-.day-detail {
-    height: 350px;
-    padding-bottom: 20px;
-    position: relative;
+.day-detail-container {
+    width:100%;
+    max-width:1200px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom:20px;
+    background-color:white;
+    height:100%;
 }
+
 .day-detail-image {
-    opacity: 1;
-    display: inline-block;
-    border-top: 2px solid black;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    height: 95%;
-    width: 30%;
-    margin-right: 0px;
-    overflow: hidden;
+    border-right:2px solid black;
+    border-bottom:2px solid black;
+    height:300px;
 }
-.hour-tile p:first-of-type {
-    text-decoration: underline;
-}
+
 .big-icon {
     z-index: 0;
     font-size: 10em;
@@ -164,113 +158,199 @@ h6 {
     animation: colorchange 20s infinite;
     -webkit-animation: colorchange 20s infinite;
 }
+
 .time {
     animation: colorchange 20s infinite;
     -webkit-animation: colorchange 20s infinite;
     margin-left: 10%;
 }
+
 .day-tile-image i {
     animation: colorchange 20s infinite;
     -webkit-animation: colorchange 20s infinite;
 }
+
 .day-detail-details {
-    display: inline-block;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 95%;
-    width: 67%;
-    margin-left: 0;
-    overflow: hidden;
-    position: relative;
+    height:325px;
 }
+
 .day-detail-header {
-    margin-bottom: -5px;
-    position: relative;
-    top: -10px;
     font-weight: 900;
     letter-spacing: 2.5px;
     font-size: 1.2em;
+    height:25px;
+    border-bottom:2px solid black;
 }
+
 .hour-tile {
-    position: relative;
-    display: inline-block;
-    height: 80px;
-    width: 8.33%;
-    float: left;
-    margin-bottom: 0;
-    border-right: 1px solid black;
-    border-right: 1px solid black;
-    overflow: hidden;
+    padding-top:10px;
+    display:inline-block;
+    height:105px;
+    width: 71.5px;
     color: white;
-    background-color: black;
-}
-.hour-tile:last-of-type {
-    border-right: none;
-}
-.hour-container {
-    width: 100%;
-    height: 81px;
-    position: absolute;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    bottom: 0;
 }
 .hour-tile i {
-    position: absolute;
-    font-size: 2em;
+    font-size: 1.5em;
     z-index: 0;
-    top: 15%;
-    right: 5%;
-    margin-bottom: 10%;
 }
+.hour-tile p {
+    z-index: 1;
+}
+.hour-tile p:first-of-type {
+    text-decoration: underline;
+}
+
+.hour-container {
+    height: auto;
+    background-color:black;
+    overflow-x:auto;
+    white-space:nowrap;
+    overflow-y:hidden;
+}
+
 .day-icon {
     font-size: 2em;
     margin-right: 5px;
     animation: colorchange 20s infinite;
     -webkit-animation: colorchange 20s infinite;
 }
-.hour-tile p {
-    z-index: 1;
-}
+
 .tile-temp {
-    position: absolute;
-    top: 70%;
-    left: 40%;
+margin-top:5px;
 }
+
 .day-data-container {
-    margin-top:5px;
-    position: relative;
+  padding-top:2.5%;
+  background-color:white;
+  overflow-y:scroll;
+  height:60%;
 }
 .day-data {
-    margin-top: 10px;
-    font-weight: 900;
+  display:inline-block;
+  font-weight: 900;
+  white-space:nowrap;
+  height:70px;
 }
 .small-icon {
     font-size: 1.2em;
 }
 .alert-container {
-    position: relative;
-    margin-top: 3.2%;
-    border-top: 2px solid black;
-    height: 80px;
+    height: auto;
     overflow: hidden;
-    z-index:0;
-    margin-left: -30%;
-    padding-top:5%;
+    background-color:white;
 }
 .warning-null {
     font-size: 1.2em;
     font-weight: 900;
 }
+
 #alert{
+  border:none;
   z-index: 1;
-  position:absolute;
+  position:relative;
+  overflow:hidden;
 }
 .summary {
     font-weight: 900;
     font-size: 2em;
     margin-top: 20px;
 }
+
+@media (max-width: 994px) {
+  .alert-container{
+    clear:both;
+    margin:auto;
+  }
+  .day-detail-image{
+  }
+  .big-icon{
+    margin-top:0px;
+    font-size:7em;
+  }
+  .day-data{
+    height:60px;
+  }
+  .day-data-container{
+  height:60%;
+  }
+  .hour-container{
+  padding-top:-5px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  body{
+  padding:20px;
+  }
+  .day-detail-image{
+    height:60%;
+    border-right:none;
+    border-bottom:2px solid black;
+  }
+  .day-detail-container{
+  }
+  .big-icon{
+    font-size:7em;
+  }
+
+  .day-data{
+    font-size:.7em;
+    margin-top:10px;
+    padding-left:0px;
+    padding-right:0px;
+    margin:0 5px 0 5px;
+  }
+  .day-data-container{
+  padding-left:0px;
+  padding-right:0px;
+  padding-top:10px;
+  overflow:hidden;
+  }
+
+  .week-detail{
+  height:200px;
+  float:left;
+  }
+  .week-detail:after{
+  clear:both;
+  }
+  .day-tile{
+  height:90%;
+  width:90px;
+  overflow:none;
+  }
+  .day-tile-image{
+  font-size:.7em;
+  margin-left:5px;
+  border:none;
+  overflow:hidden;
+  }
+
+  .day-tile-details{
+  border:none;
+  }
+  .day-detail-header{
+    height:30px;
+    padding:5px;
+    font-size:.9em
+    }
+    .tile-header{
+    font-size:.75em;
+    }
+    .day-tile h6:first-of-type{
+    display:none;
+    }
+    .day-detail-container{
+    }
+
+
+
+}
+@media (max-width:992px){
+  .day-data-container{
+  padding-top:30px;
+  }
+}
+
