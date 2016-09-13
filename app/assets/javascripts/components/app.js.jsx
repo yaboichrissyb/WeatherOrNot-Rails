@@ -58,6 +58,7 @@ var App = React.createClass({
       var dayArray = result.daily.data;
       var hourly = result.hourly.data;
       var alerts = result.alert;
+      console.log(result);
       this.setState({
         current: currently,
         Days: dayArray,

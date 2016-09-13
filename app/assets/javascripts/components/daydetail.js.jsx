@@ -196,7 +196,6 @@ var DayDetail = React.createClass({
     var fullArray = this.props.hours;
     var twelveArray = fullArray.slice(1,24);
     var hourNums = Array.from(twelveArray);
-    console.log(hourNums);
     return (
       <div className="row">
         <div className="day-detail-container ">
